@@ -1,0 +1,94 @@
+<div class="signup-container">
+  <mat-card>
+    <mat-card-header>
+      <h2>Registrarme</h2>
+    </mat-card-header>
+
+    <form [formGroup]="signupForm" (ngSubmit)="onSignup(signupForm)">
+      <div class="flex">
+        <div>
+          <mat-form-field>
+            <input
+              matInput
+              type="text"
+              id="nameUser"
+              formControlName="name"
+              placeholder="Nombre completo"
+            />
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Usuario" formControlName="username" />
+          </mat-form-field>
+          <mat-form-field>
+            <input
+              matInput
+              type="password"
+              id="passwordlogin"
+              formControlName="password"
+              placeholder="Contraseña"
+            />
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field appearance="fill">
+            <mat-label>Genero</mat-label>
+            <select matNativeControl required formControlName="gender">
+              <option value="M">Masculino</option>
+              <option value="F">Femenino</option>
+            </select>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Fecha de nacimiento MM/DD/YYYY</mat-label>
+            <input
+              matInput
+              [matDatepicker]="picker"
+              formControlName="birthdate"
+            />
+            <mat-datepicker-toggle
+              matSuffix
+              [for]="picker"
+            ></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+
+          <mat-form-field>
+            <input
+              matInput
+              type="number"
+              id="dniId"
+              formControlName="dni"
+              placeholder="DNI"
+            />
+          </mat-form-field>
+
+          <mat-form-field>
+            <input
+              matInput
+              type="text"
+              id="urlPhoto"
+              formControlName="profilePictureUrl"
+              placeholder="Enlace de foto"
+            />
+          </mat-form-field>
+        </div>
+      </div>
+
+      <mat-card-actions>
+        <button
+          [disabled]="loading"
+          mat-raised-button
+          type="submit"
+          color="primary"
+        >
+          REGISTRARME
+        </button>
+
+        <div class="error-container" *ngIf="errorMessage">
+          <p>Los datos de ingreso son incorrectos o faltan completar</p>
+        </div>
+      </mat-card-actions>
+    </form>
+  </mat-card>
+</div>

@@ -1,0 +1,30 @@
+<form [formGroup]="commentForm" (ngSubmit)="onSubmitComment()">
+  <div>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>{{ getPlaceHolderName() }}</mat-label>
+      <textarea
+        matInput
+        [disabled]="myProfileId === 0"
+        placeholder="Me gusto mucho su receta"
+        id="content"
+        formControlName="content"
+      ></textarea>
+      <mat-error *ngIf="commentForm.hasError('content')">
+        Ingrese un comentario valido
+      </mat-error>
+    </mat-form-field>
+    <div style="width: 100%; text-align: right">
+      <button
+        [disabled]="myProfileId === 0 || loading"
+        mat-raised-button
+        color="primary"
+      >
+        Agregar
+      </button>
+    </div>
+  </div>
+</form>
+
+<div *ngFor="let comment of comments">
+  <app-comment [comment]="comment"></app-comment>
+</div>

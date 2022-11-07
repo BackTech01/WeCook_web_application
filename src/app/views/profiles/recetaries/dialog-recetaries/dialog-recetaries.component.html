@@ -1,0 +1,10 @@
+<h1 mat-dialog-title>Ingrese el nombre del nuevo recetario:</h1>
+<div mat-dialog-content>
+  <mat-form-field appearance="fill">
+    <input matInput [(ngModel)]="name" />
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cerrar</button>
+  <button mat-button (click)="onNoClick()">Crear</button>
+</div>

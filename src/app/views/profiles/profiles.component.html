@@ -1,0 +1,51 @@
+<div class="form-container">
+  <mat-card class="example-card">
+    <div class="flex-container">
+      <div class="image-container">
+        <img
+          mat-card-xl-image
+          class="circular--square"
+          [src]="profile.profilePictureUrl"
+          alt="Photo of a Shiba Inu"
+        />
+      </div>
+
+      <div>
+        <mat-card-content class="p-text">
+          <h3>{{ profile.name }}</h3>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt
+            nostrum sunt ratione sint optio corrupti excepturi cum voluptatem
+            provident sit inventore magnam facere quod dolore est, tempore
+            maiores veniam quam!
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button color="primary">Suscribirse</button>
+          <button mat-raised-button color="primary">Ofrecer Tip</button>
+        </mat-card-actions>
+      </div>
+    </div>
+  </mat-card>
+</div>
+
+<div class="button-container">
+  <mat-tab-group mat-align-tabs="center">
+    <mat-tab label="Mis recetas">
+      <div *ngIf="profileReceipts.length <= 0; else other_content">
+        <mat-card>
+          <mat-card-header>Aun no posee recetas </mat-card-header>
+        </mat-card>
+      </div>
+
+      <ng-template #other_content>
+        <app-receipt-container
+          [receipes]="profileReceipts"
+        ></app-receipt-container>
+      </ng-template>
+    </mat-tab>
+    <mat-tab label="Mis recetarios">
+      <app-recetaries></app-recetaries>
+    </mat-tab>
+  </mat-tab-group>
+</div>

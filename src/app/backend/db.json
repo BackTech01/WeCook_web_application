@@ -1,0 +1,160 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "jorge@gmail.com"
+    },
+    {
+      "id": 2,
+      "email": "lucia@gmail.com"
+    },
+    {
+      "id": 3,
+      "email": "andre@gmail.com"
+    }
+  ],
+  "profiles": [
+    {
+      "id": 1,
+      "name": "Jorge Kawamura",
+      "profilePictureUrl": "https://gcdn.lanetaneta.com/wp-content/uploads/2019/05/Breaking-Bad-10-mejores-citas-de-Jesse-Pinkman.jpg",
+      "gender": "M",
+      "birthdate": "2001-08-11T00:00:00.000+00:00",
+      "subscribersPrice": 0,
+      "subsOn": true,
+      "tipsOn": true,
+      "dni": 11111111
+    },
+    {
+      "id": 2,
+      "name": "Lucia Heredia",
+      "profilePictureUrl": "https://i.pinimg.com/originals/3e/a0/18/3ea0181962706fae49bee9b69f31446c.jpg",
+      "gender": "F",
+      "birthdate": "2001-01-01T00:00:00.000+00:00",
+      "subscribersPrice": 0,
+      "subsOn": true,
+      "tipsOn": true,
+      "dni": 11111111
+    },
+    {
+      "id": 3,
+      "name": "Andreluis Ingaroca",
+      "profilePictureUrl": "https://i.pinimg.com/736x/69/0b/5e/690b5ef8d3557fdce6ef849099506d55.jpg",
+      "gender": "M",
+      "birthdate": "2001-01-01T00:00:00.000+00:00",
+      "subscribersPrice": 0,
+      "subsOn": true,
+      "tipsOn": true,
+      "dni": 11111111
+    }
+  ],
+  "recipes": [
+    {
+      "id": 1,
+      "name": "Arroz con Huevo",
+      "views": 0,
+      "exclusive": false,
+      "preparation": "Preparar el arroz. Freir el Huevo. Combinarlos",
+      "recommendation": "",
+      "profileId": 1,
+      "cookbookId": 1,
+      "tags": [],
+      "ingredients": []
+    },
+    {
+      "id": 2,
+      "name": "Salmón al horno",
+      "views": 0,
+      "exclusive": false,
+      "preparation": "Engrasar un fuente de horno y colocar el salmón con la piel hacia abajo. Salpimentar y añadir el eneldo y la ralladura del limón. Hornear a 180º C durante 15 minutos. Añadir las alcaparras antes de servir.",
+      "recommendation": "",
+      "profileId": 1,
+      "cookbookId": 1,
+      "tags": [],
+      "ingredients": [
+        {
+          "id": 1,
+          "name": "Arroz",
+          "calories": 0.6,
+          "price": 1.5,
+          "recipes": [],
+          "ingredientsRecipes": []
+        },
+        {
+          "id": 2,
+          "name": "Salmon",
+          "calories": 6.6,
+          "price": 5,
+          "recipes": [],
+          "ingredientsRecipes": []
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Tartaletas de manzana",
+      "views": 0,
+      "exclusive": false,
+      "preparation": "ECortar las manzanas peladas en láminas finas. Estirar el hojaldre, pintar con mantequilla y espolvorear azúcar moreno. Colocar la manzana sobre el hojaldre hecho tiras, y enrollar para que quede forma de flor. Hornear a 180º C.",
+      "recommendation": "",
+      "profileId": 2,
+      "cookbookId": 2,
+      "tags": [],
+      "ingredients": []
+    },
+    {
+      "id": 4,
+      "name": "Coliflor al horno",
+      "views": 0,
+      "exclusive": false,
+      "preparation": "Cocer la coliflor durante 10 minutos. Meter en una picadora la coliflor cocida y la cebolleta. Añadir el huevo, el pan rallado y el queso, y mezclar bien hasta formar una masa. Hacer bolitas con la masa y hornear a 180º C.",
+      "recommendation": "",
+      "profileId": 2,
+      "cookbookId": 2,
+      "tags": [],
+      "ingredients": []
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "text": "Muy buena receta",
+      "profileId": 2
+    },
+    {
+      "id": 2,
+      "text": "El salmon se ve delicioso",
+      "profileId": 3
+    },
+    {
+      "profileId": 1,
+      "text": "hola, probando",
+      "recipeId": "1",
+      "id": 3
+    },
+    {
+      "profileId": 1,
+      "text": "hola, probando receta 2",
+      "recipeId": "2",
+      "id": 4
+    },
+    {
+      "profileId": 1,
+      "text": "helollo",
+      "recipeId": "2",
+      "id": 5
+    },
+    {
+      "profileId": 1,
+      "text": "gfddg",
+      "recipeId": "2",
+      "id": 6
+    },
+    {
+      "profileId": 1,
+      "text": "hello eorld",
+      "recipeId": "2",
+      "id": 7
+    }
+  ]
+}

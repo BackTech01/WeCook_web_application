@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="login-container">
+    <mat-card [class.mat-elevation-z4]="isActive">
+      <mat-card-header>
+        <mat-card-title>Iniciar Sesion</mat-card-title>
+      </mat-card-header>
+
+      <form [formGroup]="loginForm" (ngSubmit)="onLogin(loginForm)">
+        <mat-form-field>
+          <input matInput placeholder="Usuario" formControlName="username" />
+        </mat-form-field>
+
+        <mat-form-field>
+          <input
+            matInput
+            type="password"
+            id="passwordlogin"
+            formControlName="password"
+            placeholder="Contraseña"
+          />
+        </mat-form-field>
+
+        <mat-card-actions>
+          <button
+            [disabled]="loading"
+            mat-raised-button
+            type="submit"
+            color="primary"
+          >
+            Ingresar
+          </button>
+
+          <div class="error-container" *ngIf="errorMessage">
+            <p>Los datos de ingreso son incorrecto(s)</p>
+          </div>
+
+          <p>
+            ¿No tienes una cuenta? <br />
+            <a routerLink="/signup" mat-raised-button> Registrate </a>
+          </p>
+        </mat-card-actions>
+      </form>
+    </mat-card>
+  </div>
+</div>

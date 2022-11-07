@@ -1,0 +1,151 @@
+<div fxLayout="row" fxLayoutAlign="space-around center">
+  <div class="grid-container">
+    <section class="grid-1">
+      <mat-card>
+        <mat-card-title>{{ actualRecipe?.name || "Receta" }}</mat-card-title>
+        <mat-card-subtitle
+          >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet
+          laborum ratione eum consequuntur nihil quibusdam fugit ipsum magnam,
+          nostrum officiis error et rerum laudantium possimus explicabo omnis!
+          Recusandae, quam natus!</mat-card-subtitle
+        >
+        <mat-card-content>
+          <div class="flex-0 w-80 md:w-64">
+            <img
+              mat-card-md-image
+              src="https://static.vecteezy.com/system/resources/previews/001/209/198/original/food-png.png"
+              alt="Photo generic of food"
+            />
+          </div>
+
+          <mat-card-title style="margin-top: 15px">Ingredientes</mat-card-title>
+
+          <div
+            *ngIf="getRecipeIngredientNames().length <= 0; else other_content"
+          >
+            <ul>
+              <li>Aun no se agregaron ingredientes a esta receta</li>
+            </ul>
+          </div>
+
+          <ng-template #other_content>
+            <ul>
+              <li *ngFor="let ingredient of getRecipeIngredientNames()">
+                {{ ingredient }}
+              </li>
+            </ul>
+          </ng-template>
+
+          <mat-divider></mat-divider>
+          <mat-card-title style="margin-top: 35px; margin-bottom: 30px"
+            >Instrucciones</mat-card-title
+          >
+
+          <ol>
+            <div class="instruction">
+              <li>{{ actualRecipe?.preparation || "" }}</li>
+              <img
+                src="https://www.masmusculo.com.es/wp-content/uploads/2017/03/preparacion-de-comidas-herramientas.jpg"
+                alt="Food step generic"
+                class="image-instruction"
+              />
+            </div>
+          </ol>
+          <div
+            class="flex-style"
+            style="
+              column-gap: 20px;
+              padding-inline-start: 40px;
+              margin-bottom: 15px;
+            "
+          >
+            <button mat-raised-button color="primary">Recetario 1</button>
+            <button mat-raised-button color="primary">Guardar receta</button>
+          </div>
+
+          <mat-divider></mat-divider>
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+            "
+          >
+            <mat-card-title style="margin-top: 35px; margin-bottom: 30px"
+              >Calificar Receta</mat-card-title
+            >
+            <div style="display: flex">
+              <mat-icon
+                aria-hidden="false"
+                aria-label="Example star icon"
+                fontIcon="star"
+                color="primary"
+              ></mat-icon>
+              <mat-icon
+                aria-hidden="false"
+                aria-label="Example star icon"
+                fontIcon="star"
+                color="primary"
+              ></mat-icon>
+              <mat-icon
+                aria-hidden="false"
+                aria-label="Example star icon"
+                fontIcon="star"
+                color="primary"
+              ></mat-icon>
+              <mat-icon
+                aria-hidden="false"
+                aria-label="Example star icon"
+                fontIcon="star"
+                color="primary"
+              ></mat-icon>
+              <mat-icon
+                aria-hidden="false"
+                aria-label="Example star icon"
+                fontIcon="star"
+              ></mat-icon>
+            </div>
+          </div>
+
+          <mat-divider></mat-divider>
+
+          <div>
+            <mat-card-title style="margin-top: 35px; margin-bottom: 30px"
+              >Comentarios</mat-card-title
+            >
+          </div>
+
+          <app-comment-section
+            [profiles]="profiles"
+            [receiptId]="getRecipeId()"
+          ></app-comment-section>
+        </mat-card-content>
+      </mat-card>
+    </section>
+    <section class="grid-2">
+      <mat-card>
+        <mat-card-title>Hola, soy {{ autor?.name || "John" }}</mat-card-title>
+        <img
+          class="profile-autor"
+          [src]="autor?.profilePictureUrl || ''"
+          alt=""
+        />
+        <mat-card-content>
+          <p>
+            Esta es una de las recetas que he estado trabajando por varios
+            meses, me gusta la sazón y lo delicioso que puede ser. Animate a
+            conocer mas visitando mi perfil
+          </p>
+        </mat-card-content>
+        <mat-card-actions style="text-align: right">
+          <a
+            mat-flat-button
+            color="primary"
+            [routerLink]="['/perfil', autor?.id]"
+            >Ver perfil</a
+          >
+        </mat-card-actions>
+      </mat-card>
+    </section>
+  </div>
+</div>

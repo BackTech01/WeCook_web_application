@@ -1,0 +1,18 @@
+<p>
+  <mat-toolbar color="primary">
+    <span>WeCook</span>
+
+    <div class="spacer"></div>
+
+    <a mat-button routerLink="inicio">Inicio</a>
+    <a mat-button routerLink="receta">Recetas</a>
+    <div *ngIf="verifyLoggedUser(); else other_content">
+      <a mat-button routerLink="crearReceta">Crear Receta</a>
+      <a mat-button [routerLink]="goToMyProfile()">Perfil</a>
+    </div>
+
+    <ng-template #other_content>
+      <a mat-button routerLink="login">Iniciar Sesion</a>
+    </ng-template>
+  </mat-toolbar>
+</p>

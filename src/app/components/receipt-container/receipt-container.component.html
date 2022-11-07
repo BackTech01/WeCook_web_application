@@ -1,0 +1,29 @@
+<mat-card
+  [class.mat-elevation-z4]="true"
+  class="example-card"
+  *ngFor="let recipe of receipes"
+>
+  <mat-card-title-group>
+    <mat-card-title>{{ recipe.name }}</mat-card-title>
+    <mat-card-subtitle class="subtitle">
+      {{ recipe.preparation }}
+      <p>Ingredientes: {{ getIngredients(recipe) }}</p>
+    </mat-card-subtitle>
+
+    <div class="flex-0 w-80 md:w-64">
+      <img
+        mat-card-md-image
+        src="https://static.vecteezy.com/system/resources/previews/001/209/198/original/food-png.png"
+        alt="Photo generic of food"
+      />
+    </div>
+  </mat-card-title-group>
+  <mat-card-footer>
+    <a
+      [routerLink]="['/detalleReceta', recipe.id]"
+      mat-raised-button
+      color="primary"
+      >Ver receta completa</a
+    >
+  </mat-card-footer>
+</mat-card>

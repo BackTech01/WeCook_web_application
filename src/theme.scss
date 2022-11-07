@@ -1,0 +1,24 @@
+@import "~@angular/material/theming";
+@include mat-core();
+
+
+$my-primary: mat-palette($mat-deep-orange,800);
+$my-accent: mat-palette($mat-brown,900);
+$my-warn: mat-palette($mat-grey,900); // no cuenta
+$my-black: mat-palette($mat-grey,900);
+
+$my-theme: mat-light-theme($my-primary, $my-accent, $my-warn);
+
+@include angular-material-theme($my-theme);
+
+
+.alternative {
+    $my-primary: mat-palette($mat-deep-orange,800);
+    $my-accent: mat-palette($mat-brown,900);
+    $my-warn: mat-palette($mat-grey,50); // no cuenta
+    $my-black: mat-palette($mat-grey,50);
+
+    $my-theme: mat-light-theme($my-primary, $my-accent, $my-warn);
+
+@include angular-material-theme($my-theme);
+}

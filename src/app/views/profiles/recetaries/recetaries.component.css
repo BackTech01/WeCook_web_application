@@ -1,0 +1,28 @@
+.grid-recetaries {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-around;
+    column-gap: 25px;
+    
+}
+img {
+    text-align: center;
+}
+
+.recetary {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 180px;
+    width: 160px;
+    text-align: center;
+    margin:6px;
+}
+
+.clickable {
+    cursor: pointer;
+
+    
+}

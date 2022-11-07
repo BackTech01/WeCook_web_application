@@ -1,0 +1,45 @@
+
+.full-width{
+    width: 100%;
+}
+
+.top-padding{
+    padding-top: 3px;
+}
+
+.margin-left mat-radio-button:not(:first-child){
+    margin-left:10px;
+}
+
+.form-container{
+    margin: 100px;
+}
+
+mat-form-field {
+    width: 100%;
+}
+
+.flex {
+    display: flex;
+    column-gap: 20px;
+    row-gap: 30px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}
+
+.flex section {
+    width: 100%;
+    max-width: 500px;
+}
+
+.subtitle-ingredient {
+    padding-top:10px
+}
+
+.title-ingredient {
+    display:flex;
+    column-gap: 5px;
+    justify-content: space-between;
+    align-items: center;
+}

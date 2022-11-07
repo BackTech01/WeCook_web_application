@@ -1,0 +1,47 @@
+.example-card {
+    max-width: 90%;
+    text-align: center;
+    padding: 12px
+  }
+
+  .image-container {
+    padding: 6px;
+  }
+  .circular--square {
+    border-radius: 50%;
+  }
+
+  .form-container {
+    justify-content: center;
+    display: flex;
+    margin-bottom: 25px;
+  }
+
+  .p-text{
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+
+  .div-text {
+    font-weight: 500;
+  }
+
+.flex-container { 
+  display:flex;
+  column-gap: 10px;
+}
+
+mat-card-actions {
+  display: flex;
+  margin: auto;
+  align-items: center;
+  max-width: 80%;
+  justify-content: space-around;
+}
+
+.button-container{
+  button {
+    font-weight: 400;
+    font-size: 18px;
+  }
+}

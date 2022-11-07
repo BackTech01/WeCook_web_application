@@ -1,0 +1,163 @@
+<mat-stepper [linear]="true" #stepper>
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>CREA TU RECETA</ng-template>
+
+      <mat-card>
+        <div class="flex">
+          <section>
+            <mat-card-title>Informacion de la Receta</mat-card-title>
+
+            <mat-card-content>
+              <mat-form-field>
+                <input
+                  matInput
+                  type="text"
+                  id="name"
+                  formControlName="name"
+                  placeholder="Nombre"
+                />
+              </mat-form-field>
+
+              <mat-form-field>
+                <input
+                  matInput
+                  type="text"
+                  id="recommendation"
+                  formControlName="recommendation"
+                  placeholder="Recomendacion"
+                />
+              </mat-form-field>
+
+              <p>
+                <mat-checkbox formControlName="exclusive"
+                  >Exclusividad</mat-checkbox
+                >
+              </p>
+            </mat-card-content>
+          </section>
+
+          <section>
+            <mat-card-title>Preparacion de la Receta</mat-card-title>
+
+            <mat-card-content>
+              <mat-form-field>
+                <textarea
+                  matInput
+                  type="text"
+                  id="preparation"
+                  formControlName="preparation"
+                  placeholder="Preparacion"
+                  rows="5"
+                ></textarea>
+              </mat-form-field>
+            </mat-card-content>
+          </section>
+        </div>
+      </mat-card>
+      <button
+        mat-raised-button
+        type="submit"
+        matStepperNext
+        color="primary"
+        (click)="firstStep()"
+      >
+        CONTINUAR
+      </button>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="ingredientForm" label="Fill out your address">
+    <ng-template matStepLabel>CREA TUS INGREDIENTES</ng-template>
+
+    <form [formGroup]="ingredientForm">
+      <mat-card>
+        <div class="title-ingredient">
+          <mat-card-title>Ingredientes</mat-card-title>
+          <button
+            mat-mini-fab
+            color="primary"
+            aria-label="Agregar"
+            (click)="addIngredientRow()"
+          >
+            <mat-icon>plus_one</mat-icon>
+          </button>
+        </div>
+
+        <mat-card-content>
+          <div formArrayName="ingredients">
+            <div
+              *ngFor="
+                let ingredientGroup of ingredientesHelper?.controls;
+                let i = index
+              "
+              [formGroupName]="i"
+            >
+              <h4 class="subtitle-ingredient">Ingrediente {{ i + 1 }}</h4>
+
+              <mat-form-field>
+                <input
+                  matInput
+                  type="text"
+                  id="name"
+                  formControlName="name"
+                  placeholder="Nombre"
+                />
+              </mat-form-field>
+
+              <mat-form-field>
+                <input
+                  matInput
+                  type="number"
+                  id="calories"
+                  formControlName="calories"
+                  placeholder="Calorias"
+                />
+              </mat-form-field>
+
+              <mat-form-field>
+                <input
+                  matInput
+                  type="number"
+                  id="price"
+                  formControlName="price"
+                  placeholder="Precio"
+                />
+              </mat-form-field>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+      <div>
+        <button mat-button matStepperPrevious>Retroceder</button>
+        <button mat-raised-button color="primary" (click)="submitAll(stepper)">
+          CREAR RECETA
+        </button>
+      </div>
+    </form>
+  </mat-step>
+
+  <mat-step label="end">
+    <ng-template matStepLabel>RESULTADO</ng-template>
+    <mat-card>
+      <mat-card-title
+        >TU RECETA {{ newReceipName }} SE CREO EXITOSAMENTE</mat-card-title
+      >
+
+      <mat-card-content>
+        <div class="flex-0 w-80 md:w-64">
+          <img
+            mat-card-md-image
+            src="https://static.vecteezy.com/system/resources/previews/001/209/198/original/food-png.png"
+            alt="Photo generic of food"
+          />
+        </div>
+      </mat-card-content>
+
+      <mat-card-footer>
+        <a [routerLink]="getReceiptId()" mat-raised-button color="primary"
+          >Ver publicacion</a
+        >
+      </mat-card-footer>
+    </mat-card>
+  </mat-step>
+</mat-stepper>

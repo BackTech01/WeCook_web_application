@@ -1,0 +1,46 @@
+
+
+.column1 {
+    margin-left: 10px;
+}
+
+.h1-text {
+    font-weight: bold;
+    font-size: medium;
+    margin-top: 10px;
+}
+
+.example-result-card .example-label-container.example-label-horizontal {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 12px 16px;
+    max-width: 284px;
+  }
+
+  .example-name-label {
+    text-align: left;
+  }
+
+  mat-slider {
+    width: 180px;
+  }
+
+  .form-container{
+    margin: 50px;
+    padding-bottom: 50px; 
+}
+
+.example-card { 
+    margin-bottom: 8px;
+  }
+
+  .subtitle {
+    font-weight: 500;
+
+    margin-right: 20px;
+}
+
+mat-divider:not(:last-child) { 
+  margin-bottom: 15px;
+  
+}

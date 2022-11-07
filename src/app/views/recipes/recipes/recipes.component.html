@@ -1,0 +1,93 @@
+<div fxLayout="row" fxLayout.sm="column" fxLayoutGap="10px">
+  <div class="column1" fxFlex="1 1 auto">
+    <div class="h1-text">
+      <h1 class="ml-3 font-semibold text-xl">Nombre de receta</h1>
+    </div>
+    <mat-form-field class="mt-2" appearance="outline" color="primary">
+      <mat-chip-list #chipList aria-label="Fruit selection">
+        <input
+          matInput
+          placeholder="Nombre de la receta..."
+          #fruitInput
+          [(ngModel)]="name"
+        />
+      </mat-chip-list>
+    </mat-form-field>
+    <mat-divider></mat-divider>
+
+    <div class="h1-text">
+      <h1 class="ml-3 font-semibold text-xl">Ingrediente</h1>
+    </div>
+
+    <mat-form-field class="mt-2" appearance="outline" color="primary">
+      <mat-chip-list #chipList aria-label="ingredientes">
+        <input
+          matInput
+          placeholder="Nombre de ingrediente..."
+          #fruitInput
+          [(ngModel)]="ingredient"
+        />
+      </mat-chip-list>
+    </mat-form-field>
+
+    <mat-divider></mat-divider>
+    <div class="mt-3 flex flex-col">
+      <h1 class="font-semibold text-xl">Costo de preparación</h1>
+
+      <div class="example-label-container 'example-label-horizontal'">
+        <label class="example-name-label">Costo máximo S/.{{ value }}</label>
+        <label class="example-value-label"></label>
+      </div>
+
+      <div>
+        <mat-slider
+          color="primary"
+          [min]="minValue"
+          [max]="maxValue"
+          [(ngModel)]="value"
+        ></mat-slider>
+      </div>
+    </div>
+
+    <mat-divider></mat-divider>
+    <div class="mt-3 flex flex-col">
+      <h1 class="font-semibold text-xl">Tiempo de preparación</h1>
+
+      <div class="example-label-container 'example-label-horizontal'">
+        <label class="example-name-label"
+          >Tiempo máximo {{ timeValue }} hrs</label
+        >
+        <label class="example-value-label"></label>
+      </div>
+
+      <div>
+        <mat-slider
+          color="primary"
+          [min]="minTime"
+          [max]="maxTime"
+          [(ngModel)]="timeValue"
+        ></mat-slider>
+      </div>
+    </div>
+    <div>
+      <button
+        (click)="filterRecipes()"
+        mat-raised-button
+        color="secondary"
+        style="width: 100%"
+      >
+        Filtrar
+      </button>
+    </div>
+  </div>
+
+  <div class="column2" fxFlex="1 1 auto">
+    <div class="mt-5 flex flex-col items-center form-container">
+      <div>
+        <app-receipt-container
+          [receipes]="filteredRecipes"
+        ></app-receipt-container>
+      </div>
+    </div>
+  </div>
+</div>

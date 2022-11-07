@@ -1,0 +1,22 @@
+.subtitle {
+    font-weight: 500;
+    padding-top:15px;
+    margin-right: 20px;
+}
+
+.example-card:not(:last-child) { 
+    margin-bottom: 30px;
+    
+  }
+
+  .example-card2{
+    text-align: center;
+    max-width: 350px;
+    
+  }
+
+
+  .horizontal-card{
+    flex: auto;
+    
+  }

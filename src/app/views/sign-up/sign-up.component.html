@@ -63,15 +63,25 @@
             />
           </mat-form-field>
 
-          <mat-form-field>
-            <input
-              matInput
-              type="text"
+            <button type="button" mat-raised-button (click)="fileInput.click()">Subir foto
+              <span class="file-name">{{selectedFile?.name}}</span>  
+            </button>
+          <input
+              hidden
+              #fileInput
+              type="file"
               id="urlPhoto"
               formControlName="profilePictureUrl"
-              placeholder="Enlace de foto"
-            />
-          </mat-form-field>
+              placeholder="Subir foto"
+
+              (change)="onChange($event)"
+          />
+          <!--imagen opcional-->
+          <div *ngIf="imageUrl">
+            <img [src]="imageUrl" width="200px" style="padding-top: 10px; padding-bottom:10px" alt="">
+          </div>
+            
+          
         </div>
       </div>
 

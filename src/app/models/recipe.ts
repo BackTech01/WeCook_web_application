@@ -1,4 +1,5 @@
 import { Ingredient } from './ingredient';
+import { Multimedia } from './multimedia';
 
 export interface Recipe {
   id: number;
@@ -13,6 +14,7 @@ export interface Recipe {
   cookBookId: 1; //siempre será 1
   tags: [] | null; // siempre vacío
   ingredients: Ingredient[] | null;
+  multimedia: Multimedia[];
 }
 
 export interface RecipeDTO {

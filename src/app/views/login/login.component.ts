@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
   loading = false;
 
   loginForm = new FormGroup({
-    username: new FormControl('', Validators.required),
+    email: new FormControl('', Validators.required),
     password: new FormControl('', Validators.required),
   });
 
@@ -46,7 +46,7 @@ export class LoginComponent implements OnInit {
         // let userLogged: User = data;
         // if (userLogged != null) {
         //   localStorage.setItem('userLogged', userLogged.id.toString());
-        //   this.router.navigate(['home']);
+           this.router.navigate(['inicio']);
         // } else {
         //   this.errorMessage = true;
         // }
@@ -60,4 +60,7 @@ export class LoginComponent implements OnInit {
       }
     );
   }
+
+
+  
 }

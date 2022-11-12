@@ -42,6 +42,7 @@ export class ProfilesComponent implements OnInit {
         if (id != null) {
           this.profileService.getProfileById(id).subscribe((profile) => {
             this.profile = profile;
+            this.profile.profilePictureUrl = 'data:image/jpeg;base64,'+this.profile.profilePictureUrl
             this.loadReceiptsByProfileId(id);
           });
         }

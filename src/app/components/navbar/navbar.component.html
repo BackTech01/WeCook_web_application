@@ -9,6 +9,7 @@
     <div *ngIf="verifyLoggedUser(); else other_content">
       <a mat-button routerLink="crearReceta">Crear Receta</a>
       <a mat-button [routerLink]="goToMyProfile()">Perfil</a>
+      <a mat-button routerLink="login" (click)="onLogout()">Cerrar Sesión</a>
     </div>
 
     <ng-template #other_content>

@@ -12,7 +12,7 @@ import { Recipe, RecipeDTO } from 'src/app/models/recipe';
   providedIn: 'root',
 })
 export class RecipeService {
-  baseUrl = environment.apiUrl + '/recipes/';
+  baseUrl = environment.apiUrl + ':8093/recipes/';
 
   constructor(private http: HttpClient) {}
 
@@ -44,7 +44,7 @@ export class RecipeService {
   }
   getRecipesByProfileId(id: number): Observable<Recipe[]> {
     return this.http.get<Recipe[]>(
-      `${environment.apiUrl}/${id}/recipes`
+      `${environment.apiUrl}:8091/profiles/${id}/recipes`
     ) /*.pipe(retry(2), catchError(this.handleError))*/;
   }
 

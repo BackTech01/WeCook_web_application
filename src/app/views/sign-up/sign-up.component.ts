@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { Observable, Subscriber } from 'rxjs';
 import { showMessageError } from 'src/app/helpers/toastError';
 import { UserResponse } from 'src/app/models/user';
 import { UserProfile } from 'src/app/models/userProfile';
@@ -28,6 +29,8 @@ export class SignUpComponent implements OnInit {
     dni: new FormControl('', Validators.required),
     profilePictureUrl: new FormControl('', Validators.required),
   });
+  selectedFile: any = null;
+  imageUrl: string | null | undefined;
 
   constructor(
     private signupService: SignupService,
@@ -67,6 +70,8 @@ export class SignUpComponent implements OnInit {
             tipsOn: true,
             profilePictureUrl: signupForm.value.profilePictureUrl,
           });
+
+          this.router.navigate(['login']);
         },
 
         (error) => {
@@ -93,4 +98,45 @@ export class SignUpComponent implements OnInit {
       }
     );
   }
+
+  
+
+  onChange($event: Event) {
+     this.selectedFile = ($event.target as HTMLInputElement).files![0] ?? null
+    
+     if( this.selectedFile != null) {
+      this.convertToBase64(this.selectedFile);
+     }
+
+  }
+
+  readFile(file: File, susbscriber: Subscriber<any>) {
+    var fileReader = new FileReader()
+    fileReader.readAsDataURL(file);
+
+    fileReader.onload =() => {
+      susbscriber.next(fileReader.result)
+      susbscriber.complete()
+    };
+
+    fileReader.onerror = (error) => {
+      susbscriber.error(error)
+      susbscriber.complete()
+    }
+  }
+
+  convertToBase64(file: File) {
+    var observable = new Observable((suscriber: Subscriber<any>) => { 
+      this.readFile(file, suscriber)
+    });
+
+    observable.subscribe((image) => {
+      this.imageUrl = image;
+      
+      this.signupForm.value.profilePictureUrl = this.imageUrl;
+      //console.log(this.signupForm.value.profilePictureUrl);
+    })
+  }
+  
+  
 }

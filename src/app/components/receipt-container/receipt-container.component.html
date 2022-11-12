@@ -12,8 +12,9 @@
 
     <div class="flex-0 w-80 md:w-64">
       <img
-        mat-card-md-image
-        src="https://static.vecteezy.com/system/resources/previews/001/209/198/original/food-png.png"
+        mat-card-lg-image
+        
+        [src]="'data:image/jpeg;base64,'+recipe.multimedia[0]!.url!"
         alt="Photo generic of food"
       />
     </div>

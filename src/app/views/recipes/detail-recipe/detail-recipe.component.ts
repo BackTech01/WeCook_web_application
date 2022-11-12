@@ -24,6 +24,7 @@ export class DetailRecipeComponent implements OnInit {
   profiles: Profile[] = [];
   actualRecipe?: Recipe;
   autor?: Profile | undefined;
+  multimediaUrl?: string;
 
   constructor(
     private recipeService: RecipeService,
@@ -77,6 +78,8 @@ export class DetailRecipeComponent implements OnInit {
         if (id != null) {
           this.recipeService.getRecipeById(id).subscribe((recipe: Recipe) => {
             this.actualRecipe = recipe;
+            this.multimediaUrl = this.actualRecipe.multimedia[0].url;
+            console.log("multimediaUrl: ",this.actualRecipe.multimedia[0].url)
             this.loadAllUsersAndAssign(recipe.profileId);
           });
         }
@@ -97,6 +100,14 @@ export class DetailRecipeComponent implements OnInit {
 
   getProfileNameById(id: number) {
     return this.profiles.find((profile) => profile.id === id)?.name;
+  }
+
+  getPreparationLists() {
+    if (this.actualRecipe === undefined) return [];
+    let arrayPreparation = this.actualRecipe?.preparation.split('. ');
+
+    return arrayPreparation;
+
   }
 
   addProfileNameToComment() {}

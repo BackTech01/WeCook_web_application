@@ -10,7 +10,12 @@ export class ReceiptContainerComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    for (let index = 0; index < this.receipes.length; index++) {
+      this.receipes[index].multimedia[0].url = 'data:image/jpeg;base64,'+this.receipes[index].multimedia[0].url
+    }
+    console.log(this.receipes[2].multimedia[0].url);
+  }
 
   getIngredients(receipe: Recipe) {
     let ingredients = '';
@@ -25,4 +30,11 @@ export class ReceiptContainerComponent implements OnInit {
 
     return ingredients;
   }
+
+  traduceImagefrom64Bits(receipe: Recipe) {
+  
+    return receipe.multimedia[0].url = 'data:image/jpeg;base64,'+receipe.multimedia[0].url
+    
+  }
+
 }

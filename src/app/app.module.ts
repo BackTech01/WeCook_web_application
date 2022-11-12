@@ -42,6 +42,7 @@ import { CommentComponent } from './components/comment/comment.component';
 import { CommentSectionComponent } from './views/recipes/detail-recipe/comment-section/comment-section.component';
 import { RecetariesComponent } from './views/profiles/recetaries/recetaries.component';
 import { DialogRecetariesComponent } from './views/profiles/recetaries/dialog-recetaries/dialog-recetaries.component';
+import { MaterialFileInputModule } from 'ngx-material-file-input';
 @NgModule({
   declarations: [
     AppComponent,
@@ -90,6 +91,7 @@ import { DialogRecetariesComponent } from './views/profiles/recetaries/dialog-re
     MatToolbarModule,
     MatStepperModule,
     MatCheckboxModule,
+    MaterialFileInputModule
   ],
   providers: [],
   bootstrap: [AppComponent],

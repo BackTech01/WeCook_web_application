@@ -13,7 +13,7 @@ export class SignupService {
 
   createUser(data: UserDTO): Observable<UserDTO> {
     return this.http.post<User>(
-      `${environment.apiUrl}/profiles/users/register`,
+      `${environment.apiUrl}:8091/profiles/users/register`,
       data
     );
   }
@@ -23,7 +23,7 @@ export class SignupService {
     data: UserProfile
   ): Observable<UserProfile> {
     return this.http.post<UserProfile>(
-      `${environment.apiUrl}/profiles/users/${id}/profiles`,
+      `${environment.apiUrl}:8091/profiles/users/${id}/profiles`,
       data
     );
   }

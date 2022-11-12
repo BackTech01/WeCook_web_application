@@ -26,6 +26,7 @@ export class HomeComponent implements OnInit {
     this.recipeService.getLastestRecipes().subscribe(
       (res: Recipe[]) => {
         this.recipes = res;
+        //console.log(this.recipes[0].multimedia[0].url);
       },
       (error) => {
         this.recipes = MockReceipts;

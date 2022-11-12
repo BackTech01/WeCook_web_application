@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   // apiUrl: 'http://localhost:3000', //api Jsonserver
-  apiUrl: 'http://ec2-44-210-128-23.compute-1.amazonaws.com:8093',
+  apiUrl: 'http://ec2-44-201-122-34.compute-1.amazonaws.com',
 };
 
 /*

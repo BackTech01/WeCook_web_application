@@ -10,20 +10,20 @@ import { Observable } from 'rxjs';
 export class ProfileService {
   constructor(private http: HttpClient) {}
 
-  baseUrl = environment.apiUrl + '/profiles';
+  baseUrl = environment.apiUrl + ':8091/profiles';
 
   getProfileById(profileId: string): Observable<Profile> {
     // const url = this.baseUrl + '/' + profileId;
     const url = this.baseUrl + profileId;
     console.log('URL', url);
     return this.http.get<Profile>(
-      `${environment.apiUrl}/profiles/${profileId}`
+      `${environment.apiUrl}:8091/profiles/${profileId}`
     );
   }
 
   getLastestProfiles(): Observable<Profile[]> {
     const url = this.baseUrl;
-    return this.http.get<Profile[]>(`${environment.apiUrl}/profiles/`);
+    return this.http.get<Profile[]>(`${environment.apiUrl}:8091/profiles/`);
   }
 
   getMyProfile() {

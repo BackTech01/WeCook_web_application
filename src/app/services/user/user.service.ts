@@ -22,6 +22,6 @@ export class UserService {
 
   login(data: UserDTO): Observable<UserDTO> {
     const body=JSON.stringify(data);
-    return this.http.post<UserDTO>(`${environment.apiUrl}/profiles/users/login`, data, {'headers': this.headers});
+    return this.http.post<UserDTO>(`${environment.apiUrl}:8091/profiles/users/login`, data);
   }
 }

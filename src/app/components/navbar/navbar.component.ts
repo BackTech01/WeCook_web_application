@@ -23,4 +23,8 @@ export class NavbarComponent implements OnInit {
       return `/perfil/${myId}`;
     } else return `/perfil/0`;
   }
+
+  onLogout (){
+    localStorage.removeItem('userId');
+  }
 }

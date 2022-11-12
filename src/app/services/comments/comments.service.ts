@@ -12,7 +12,7 @@ export class CommentsService {
 
   getAllComentsByRecipeId(recipeId: number): Observable<Comment[]> {
     return this.http.get<Comment[]>(
-      `${environment.apiUrl}/recipes/${recipeId}/comments/`
+      `${environment.apiUrl}:8093/recipes/${recipeId}/comments/`
     );
   }
 
@@ -21,7 +21,7 @@ export class CommentsService {
     recipeId: number
   ): Observable<CommentResponse> {
     return this.http.post<CommentResponse>(
-      `${environment.apiUrl}/recipes/${recipeId}/comments/`,
+      `${environment.apiUrl}:8093/recipes/${recipeId}/comments/`,
       comment
     );
   }

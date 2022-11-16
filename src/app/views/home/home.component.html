@@ -23,7 +23,7 @@
       *ngFor="let chef of chefs"
     >
       <div class="flex-0 w-80 md:w-64">
-        <img mat-card-image [src]="chef.profilePictureUrl" [alt]="chef.name" />
+        <img mat-card-image [src]="'data:image/jpeg;base64,'+chef.profilePictureUrl" [alt]="chef.name" />
       </div>
 
       <mat-card-content>

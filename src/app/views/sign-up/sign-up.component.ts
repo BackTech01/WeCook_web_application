@@ -131,10 +131,10 @@ export class SignUpComponent implements OnInit {
     });
 
     observable.subscribe((image) => {
-      this.imageUrl = image;
       
+      this.imageUrl = image.replaceAll('data:image/jpeg;base64,',"");
       this.signupForm.value.profilePictureUrl = this.imageUrl;
-      //console.log(this.signupForm.value.profilePictureUrl);
+      console.log(this.signupForm.value.profilePictureUrl);
     })
   }
   

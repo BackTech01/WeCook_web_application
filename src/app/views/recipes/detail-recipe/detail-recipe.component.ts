@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
 import { showMessageError } from 'src/app/helpers/toastError';
@@ -13,6 +14,7 @@ import { Recipe } from 'src/app/models/recipe';
 import { CommentsService } from 'src/app/services/comments/comments.service';
 import { ProfileService } from 'src/app/services/profile/profile.service';
 import { RecipeService } from 'src/app/services/recipe/recipe.service';
+import { DialogCookbooksComponent } from './dialog-cookbooks/dialog-cookbooks.component';
 
 @Component({
   selector: 'app-detail-recipe',
@@ -25,13 +27,16 @@ export class DetailRecipeComponent implements OnInit {
   actualRecipe?: Recipe;
   autor?: Profile | undefined;
   multimediaUrl?: string;
+  /////
+  recipeId: number=0
 
   constructor(
     private recipeService: RecipeService,
     private activatedRoute: ActivatedRoute,
 
     private profileService: ProfileService,
-    private _snackBar: MatSnackBar
+    private _snackBar: MatSnackBar,
+    public dialog: MatDialog
   ) {}
 
   ngOnInit(): void {
@@ -57,7 +62,7 @@ export class DetailRecipeComponent implements OnInit {
     let myId = 0;
     this.activatedRoute.params.subscribe(
       (params) => {
-        console.log('First');
+        //console.log('First');
         let id = params['id'];
         if (id != null) {
           myId = +id;
@@ -67,7 +72,7 @@ export class DetailRecipeComponent implements OnInit {
         myId = 0;
       }
     );
-    console.log('second');
+    //console.log('second');
     return myId;
   }
 
@@ -81,6 +86,8 @@ export class DetailRecipeComponent implements OnInit {
             this.multimediaUrl = this.actualRecipe.multimedia[0].url;
             console.log("multimediaUrl: ",this.actualRecipe.multimedia[0].url)
             this.loadAllUsersAndAssign(recipe.profileId);
+                      ///
+          this.recipeId = +id
           });
         }
       },
@@ -88,6 +95,9 @@ export class DetailRecipeComponent implements OnInit {
         console.log('ERROR', error);
       }
     );
+
+
+    
   }
 
   getRecipeIngredientNames() {
@@ -111,4 +121,16 @@ export class DetailRecipeComponent implements OnInit {
   }
 
   addProfileNameToComment() {}
+
+
+  openCookbooksDialog(): void {
+    const dialogRef = this.dialog.open(DialogCookbooksComponent, {
+      data: {recipeId: this.recipeId},
+      width: '400px',
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log('The dialog was closed');
+    });
+  }
 }

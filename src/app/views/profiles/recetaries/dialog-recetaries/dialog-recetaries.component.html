@@ -1,10 +1,13 @@
-<h1 mat-dialog-title>Ingrese el nombre del nuevo recetario:</h1>
-<div mat-dialog-content>
-  <mat-form-field appearance="fill">
-    <input matInput [(ngModel)]="name" />
-  </mat-form-field>
-</div>
-<div mat-dialog-actions>
-  <button mat-button (click)="onNoClick()">Cerrar</button>
-  <button mat-button (click)="onNoClick()">Crear</button>
-</div>
+<h1 mat-dialog-title>Ingrese el nombre del nuevo recetario: {{data.profileId}}</h1>
+  
+<form [formGroup]="recetarioForm" (ngSubmit)="onCreate(recetarioForm)">
+  <div mat-dialog-content>
+    <mat-form-field appearance="fill">
+      <input matInput formControlName="cookbookName"/>
+    </mat-form-field>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">Cerrar</button>
+    <button mat-button [disabled]="loading">Crear</button>
+  </div>
+</form>

@@ -18,6 +18,13 @@
     max-height: 250px;
 }
 
+.image-recipe {
+    margin-top: 15px;
+    margin-left: 15px;
+    width:80%;
+    max-height: 450px;
+}
+
 .grid-2 {
     max-width: 300px;
     width: 100%;

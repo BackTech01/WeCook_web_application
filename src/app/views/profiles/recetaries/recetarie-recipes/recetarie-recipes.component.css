@@ -1,0 +1,52 @@
+.mat-card-image {
+    height: 250px;
+    max-width: 300px;
+    margin-inline: auto;
+}
+.full-width{
+    width: 100%;
+}
+
+.top-padding{
+    padding-top: 3px;
+}
+
+
+
+.form-container{
+    margin: 50px;
+    padding-bottom: 20px; 
+}
+
+.texth1{
+    padding-left: 20px;
+    font-weight: 500;
+}
+
+.img {
+    
+    object-fit: cover;
+    
+}
+.subtitle {
+    font-weight: 500;
+    padding-top:15px;
+    margin-right: 20px;
+}
+
+.example-card:not(:last-child) { 
+    margin-bottom: 30px;
+    
+  }
+
+  .example-card2{
+    text-align: center;
+    max-width: 350px;
+    
+  }
+
+
+  .horizontal-card{
+    flex: auto;
+    
+  }

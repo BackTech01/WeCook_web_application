@@ -1,6 +1,7 @@
 .grid-recetaries {
     margin-top: 20px;
     margin-bottom: 20px;
+    padding: 20px;
     display: flex;
     justify-content: space-around;
     column-gap: 25px;
@@ -14,8 +15,8 @@ img {
     display:flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
-    height: 180px;
+    justify-content: center;
+    height: 200px;
     width: 160px;
     text-align: center;
     margin:6px;

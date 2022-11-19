@@ -12,7 +12,8 @@
         <mat-card-content>
           <div class="flex-0 w-80 md:w-100">
             <img
-              mat-card-xl-image
+              
+              class="image-recipe"
               [src]="'data:image/jpeg;base64,'+multimediaUrl"
               alt="Photo generic of food"
             />
@@ -62,7 +63,7 @@
             "
           >
             <button mat-raised-button color="primary">Recetario 1</button>
-            <button mat-raised-button color="primary">Guardar receta</button>
+            <button mat-raised-button color="primary" (click)="openCookbooksDialog()">Guardar receta</button>
           </div>
 
           <mat-divider></mat-divider>

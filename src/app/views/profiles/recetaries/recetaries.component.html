@@ -1,16 +1,39 @@
 <div class="grid-recetaries">
-  <div class="recetary clickable" [class.mat-elevation-z8]="true">
-    <img
-      src="https://cdn-icons-png.flaticon.com/512/683/683488.png"
-      alt="recetario"
-      width="110px"
-      height="100px"
-    />
-    <button mat-raised-button color="primary" (click)="openDialog()">
-      Crear recetario
-    </button>
-  </div>
+  
+  <div fxLayout="row wrap" fxLayout.md="row" fxLayoutGap="100px">
+        <div class="recetary clickable" [class.mat-elevation-z8]="true">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/683/683488.png"
+            alt="recetario"
+            width="110px"
+            height="100px"
+          />
+          <mat-card-actions>
+            <button mat-raised-button color="primary" (click)="openDialog()">
+              Crear recetario
+            </button>
+          </mat-card-actions>
+          
+        </div>
 
-  <div class="recetary" [class.mat-elevation-z8]="true"></div>
-  <div class="recetary" [class.mat-elevation-z8]="true"></div>
+        <div class="recetary" [class.mat-elevation-z8]="true" *ngFor="let cookbook of cookbooks">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/683/683488.png"
+            alt="recetario"
+            width="110px"
+            height="100px"
+          />
+          <mat-card-content>
+            <div>{{ cookbook.name }}</div>
+          </mat-card-content>
+          
+          <a mat-raised-button color="primary" 
+          [routerLink]="['/recetario', cookbook.id]"
+          [state]="{name: cookbook.name}">
+            Ver recetas
+          </a>
+        </div>
+        
+        
+  </div>    
 </div>

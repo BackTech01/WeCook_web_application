@@ -43,6 +43,8 @@ import { CommentSectionComponent } from './views/recipes/detail-recipe/comment-s
 import { RecetariesComponent } from './views/profiles/recetaries/recetaries.component';
 import { DialogRecetariesComponent } from './views/profiles/recetaries/dialog-recetaries/dialog-recetaries.component';
 import { MaterialFileInputModule } from 'ngx-material-file-input';
+import { DialogCookbooksComponent } from './views/recipes/detail-recipe/dialog-cookbooks/dialog-cookbooks.component';
+import { RecetarieRecipesComponent } from './views/profiles/recetaries/recetarie-recipes/recetarie-recipes.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -61,6 +63,8 @@ import { MaterialFileInputModule } from 'ngx-material-file-input';
     CommentSectionComponent,
     RecetariesComponent,
     DialogRecetariesComponent,
+    DialogCookbooksComponent,
+    RecetarieRecipesComponent,
   ],
   imports: [
     BrowserModule,

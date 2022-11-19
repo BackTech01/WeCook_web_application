@@ -1,4 +1,5 @@
 import { Chef } from 'src/app/models/chef';
+import { Cookbook } from 'src/app/models/cookbook';
 import { Profile } from 'src/app/models/profile';
 import { Recipe } from 'src/app/models/recipe';
 
@@ -22,6 +23,12 @@ export const MockChefs: Pick<Profile, 'id' | 'name' | 'profilePictureUrl'>[] = [
       'https://i.guim.co.uk/img/media/7059bdd652b06407204be285c9a94d0a39c28e9a/0_0_2560_1536/master/2560.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=1fddc777627b82690df87b837680adcf',
   },
 ];
+
+export const MockCookBooks: Cookbook[] = [
+  {id: 1, name: 'CookbookFake1', profileId: 1},
+  {id: 2, name: 'CookbookFake2', profileId: 1},
+  {id: 3, name: 'CookbookFake3', profileId: 1},
+]
 
 export const MockReceipts: Recipe[] = [
   {

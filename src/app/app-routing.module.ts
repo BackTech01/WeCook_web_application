@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './views/home/home.component';
 import { LoginComponent } from './views/login/login.component';
 import { ProfilesComponent } from './views/profiles/profiles.component';
+import { RecetarieRecipesComponent } from './views/profiles/recetaries/recetarie-recipes/recetarie-recipes.component';
 import { CreateRecipeComponent } from './views/recipes/create-recipe/create-recipe.component';
 import { DetailRecipeComponent } from './views/recipes/detail-recipe/detail-recipe.component';
 import { RecipesComponent } from './views/recipes/recipes/recipes.component';
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignUpComponent },
   { path: 'perfil/:id', component: ProfilesComponent },
+  { path: 'recetario/:id', component: RecetarieRecipesComponent, }
 ];
 
 @NgModule({

@@ -66,4 +66,22 @@ export class ProfilesComponent implements OnInit {
       }
     );
   }
+
+  getProfileId() {
+    let myId = 0;
+    this.activatedRoute.params.subscribe(
+      (params) => {
+        //console.log('First');
+        let id = params['id'];
+        if (id != null) {
+          myId = +id;
+        }
+      },
+      (error) => {
+        myId = 0;
+      }
+    );
+    //console.log('second');
+    return myId;
+  }
 }

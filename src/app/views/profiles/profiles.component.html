@@ -45,7 +45,9 @@
       </ng-template>
     </mat-tab>
     <mat-tab label="Mis recetarios">
-      <app-recetaries></app-recetaries>
+      <app-recetaries
+      [profileId]="getProfileId()"
+      ></app-recetaries>
     </mat-tab>
   </mat-tab-group>
 </div>

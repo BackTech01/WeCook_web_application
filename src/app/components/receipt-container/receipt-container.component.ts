@@ -7,6 +7,7 @@ import { Recipe } from 'src/app/models/recipe';
 })
 export class ReceiptContainerComponent implements OnInit {
   @Input() receipes: Recipe[] = [];
+  @Input() displayType: 'receipts-container' | 'inLine' = 'receipts-container';
 
   constructor() {}
 
